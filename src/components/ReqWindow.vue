@@ -10,13 +10,9 @@
         <div>Название</div>
         <input type="text" placeholder="монтаж кабеля ЭОМ на потолке" v-model="name">
       </div>
-      <div class="req-window__input_item">
-        <div>Объем материалов процесса</div>
-        <input type="text" placeholder="монтаж кабеля ЭОМ на потолке" v-model="processValue">
-      </div>
     </div>
     <button @click="sendReq">Расчитать</button>
-    <textarea :value="response?.predicted_hours ?? '' + ' ' + response?.predicted_price ?? ''"></textarea>
+    <textarea :value="(response?.predicted_hours ?? '') + ' ' + (response?.predicted_price ?? '')"></textarea>
   </section>
 </template>
 
