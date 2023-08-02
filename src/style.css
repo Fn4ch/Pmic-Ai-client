@@ -1,0 +1,36 @@
+html,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0 auto;
+  width: 1280px;
+  min-height: 100vh;
+
+  @media (min-width: 1921px) {
+    width: 64vw;
+  }
+
+  @media (max-width: 1440px) {
+    width: 860px;
+  }
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    margin: 0 16px;
+  }
+}
