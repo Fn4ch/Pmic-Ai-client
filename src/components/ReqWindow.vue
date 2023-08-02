@@ -22,28 +22,28 @@ import axios from 'axios'
 
 const square = ref<number>(0)
 const name = ref<string>('')
-const processValue = ref<number>(0)
 const response = ref<IResponse | null>(null)
 
-interface IRequest{
-  Object_area: number
-  Process_volume: number
-  name: string
-}
 
 interface IResponse{
   predicted_hours: string
   predicted_price: string
 }
 
+const customConfig = {
+    headers: {
+    'Content-Type': 'application/json'
+    }
+}
+
 const sendReq = async () => {
-  const sendingData: IRequest = {
+  const sendingData = {
     Object_area: square.value,
-    Process_volume: processValue.value,
-    name: name.value
+    "Название процесса": name.value
   }
 
-  const { data }= await axios.post<IResponse>('http://localhost:5000/predict', sendingData)
+  const { data } = await axios.post<IResponse>('http://localhost:5000/predict', sendingData, customConfig )
+
   response.value = data
 }
 
