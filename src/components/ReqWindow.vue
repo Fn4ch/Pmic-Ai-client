@@ -1,10 +1,12 @@
 <template >
-  <div class="calculation" v-if="!isCalculated">
+  <div class="calculation" v-if="!isCalculated" @click="log">
     <section class="calculation__window">
       <div class="req-form">
         <h1>Прогноз затрат</h1>
         <h4>Введите исходные данные для запроса</h4>
-          <input type="text" placeholder="монтаж кабеля ЭОМ на потолке" v-model="name">
+          <select v-model="name" placeholder="Монтаж кабеля ЭОМ на потолке">
+            <option v-for="option in options" :key="option" :value="option" class="option">{{ option }}</option>
+          </select>
             <input type="number" v-model="square" placeholder="100 м2"> 
         <button @click="sendReq">Расчитать</button>
       </div>
@@ -49,6 +51,19 @@ const name = ref<string>('')
 const response = ref<IResponse | null>(null)
 
 const isCalculated = ref<boolean>(false)
+
+function log() {
+  console.log(name.value)
+}
+
+const options: string[] = [
+  'Кабель ЭОМ пол',
+  'Лобики ГКЛ',
+  'Мариофф (основной объем)',
+  'ОВ2 (воздуховоды)',
+  'Фальшпол (+обеспыливание)',
+  'Монтаж кабеля ЭОМ на потолке'
+]
 
 
 interface IResponse{
@@ -205,7 +220,7 @@ h4{
   @media (max-width: 768px) {
     margin: 12px 20px;
   }
-  input{
+  input, select{
     padding: 12px 0px;
     background-color: transparent;
     border: none;
@@ -247,6 +262,12 @@ button{
     padding: .5vw 2vw;
     font-size: .8vw;
     border-radius: .4vw;
+  }
+}
+.option{
+  padding: 8px 12px;
+  @media (min-width: 1921px) {
+    padding: .4vw .6vw;
   }
 }
 </style>
