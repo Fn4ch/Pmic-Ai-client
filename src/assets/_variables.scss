@@ -1,37 +1,6 @@
-$colorBlack: #333333;
-$colorGrey: #AAAAAA;
-$colorGreyDark: #808080;
-$colorGreyLight: #CCCCCC;
-$colorWhite: #FFFFFF;
-$colorWhite2: #FAFAFA;
-$colorBackground: #F5F5F5;
-
-@mixin setPosition($top, $right, $bottom, $left, $position) {
-    top: $top;
-    right: $right;
-    bottom: $bottom;
-    left: $left;
-    position: $position;
-}
-
-$box-shadow: 2px 4px 16px rgba($colorGrey, 0.2);
-
-@mixin flex($alignItems, $justifyContent) {
-    display: flex;
-    align-items: $alignItems;
-    justify-content: $justifyContent;
-}
-
-@mixin button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 20px;
-}
-
-$colorBlue: #0077CC;
-$secondary-color: #FFFFFF;
-$accent-color: #FFA500;
-
-$body-bg-color: #F7F7F7;
-$text-color: #333333;
+$colorBlack: #232932;
+$colorWhite: #ffffff;
+$colorBlueLight: #E8F1FF;
+$colorBlue: #3283F8;
+$colorOrange: #EB6000;
+$colorGrey: #A8A8A8;
