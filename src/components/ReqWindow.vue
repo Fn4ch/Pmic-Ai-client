@@ -5,9 +5,10 @@
         <h1>Прогноз затрат</h1>
         <h4>Введите исходные данные для запроса</h4>
           <select v-model="name" placeholder="Монтаж кабеля ЭОМ на потолке">
+            <option value="" disabled selected>Выберите процесс</option>
             <option v-for="option in options" :key="option" :value="option" class="option">{{ option }}</option>
           </select>
-            <input type="number" v-model="square" placeholder="100 м2"> 
+            <input type="number" v-model="square" placeholder="Введите длину, м2"> 
         <button @click="sendReq">Расчитать</button>
       </div>
     </section>
